@@ -19,17 +19,18 @@ void minheap::heapify4pop(int idx)
   int lId = getLeftChildIdx(idx);
 
   int r = INT_MAX;
-  if (rId >= 0) 
+  if (rId >= 0)
     r = _elem[rId];
   int l = INT_MAX;
-  if (lId >= 0) 
+  if (lId >= 0)
     l = _elem[lId];
-  
+
   int p = _elem[idx];
   if (r >= l && p > l) {
     swapElem(idx, lId);
     heapify4pop(lId);
-  } else if (l >= r && p > r) {
+  }
+  else if (l >= r && p > r) {
     swapElem(idx, rId);
     heapify4pop(rId);
   }

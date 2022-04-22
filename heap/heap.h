@@ -7,15 +7,15 @@
 class heap
 {
 public:
-	heap();
-	~heap();
-	
+  heap();
+  ~heap();
+
 
 protected:
-	int _maxElemNum;
-	int* _elem;
+  int _maxElemNum;
+  int* _elem;
   int _endIdx;
-	
+
   void doubleStoreSize();
 
   int getParentIdx(int idx);

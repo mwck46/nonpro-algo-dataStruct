@@ -2,26 +2,26 @@
 
 heap::heap() : _maxElemNum(100), _endIdx(-1)
 {
-	_elem = new int[_maxElemNum];
+  _elem = new int[_maxElemNum];
 }
 
 heap::~heap()
 {
-	delete[] _elem;
+  delete[] _elem;
 }
 
 void heap::doubleStoreSize()
 {
-	int newSize = _maxElemNum * 2;
-	int* newArr = new int[newSize];
-	std::copy(_elem, _elem + _maxElemNum, newArr);
-	delete[] _elem;
-	_elem = newArr;
+  int newSize = _maxElemNum * 2;
+  int* newArr = new int[newSize];
+  std::copy(_elem, _elem + _maxElemNum, newArr);
+  delete[] _elem;
+  _elem = newArr;
 }
 
 int heap::getParentIdx(int idx)
 {
-  return (idx-1)/2;
+  return (idx - 1) / 2;
 }
 
 int heap::getRightChildIdx(int idx)
@@ -52,4 +52,3 @@ int heap::compareElem(int idx1, int idx2)
   else
     return 0;
 }
-
