@@ -1,6 +1,6 @@
 #include "heap.h"
 
-heap::heap() : _maxElemNum(100), _endIdx(-1)
+heap::heap() : _maxElemNum(5), _endIdx(-1)
 {
   _elem = new int[_maxElemNum];
 }
@@ -17,6 +17,7 @@ void heap::doubleStoreSize()
   std::copy(_elem, _elem + _maxElemNum, newArr);
   delete[] _elem;
   _elem = newArr;
+  _maxElemNum = newSize;
 }
 
 int heap::getParentIdx(int idx)
