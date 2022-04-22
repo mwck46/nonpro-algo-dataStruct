@@ -16,7 +16,7 @@ void heap::push(int newElem)
     doubleStoreSize();
 
   *(_elem + _endIdx) = newElem;
-  heapify();
+  heapify(_endIdx);
 }
 
 void heap::doubleStoreSize()
@@ -41,5 +41,22 @@ int heap::getRightChildIdx(int idx)
 int heap::getLeftChildIdx(int idx)
 {
   return idx * 2 + 1;
+}
+
+void heap::swapElem(int idx1, int idx2)
+{
+  int temp = _elem[idx1];
+  _elem[idx1] = _elem[idx2];
+  _elem[idx2] = temp;
+}
+
+int heap::compareElem(int idx1, int idx2)
+{
+  if (_elem[idx1] > _elem[idx2])
+    return 1;
+  else if (_elem[idx1] < _elem[idx2])
+    return -1;
+  else
+    return 0;
 }
 

@@ -153,9 +153,11 @@
   <ItemGroup>
     <ClCompile Include="heap.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="minheap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="heap.h" />
+    <ClInclude Include="minheap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

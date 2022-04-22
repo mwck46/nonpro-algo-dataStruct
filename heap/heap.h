@@ -8,8 +8,8 @@ public:
 	heap();
 	~heap();
 	void push(int newElem);
-	int pop();
-private:
+
+protected:
 	int _maxElemNum;
 	int* _elem;
   int _endIdx;
@@ -20,8 +20,11 @@ private:
   int getRightChildIdx(int idx);
   int getLeftChildIdx(int idx);
 
+  void swapElem(int idx1, int idx2);
+  int compareElem(int idx1, int idx2);
+
   // Need concrete implementation for min heap and max heap
-  virtual void heapify() = 0;
+  virtual void heapify(int idx) = 0;
 };
 
 #endif // !HEAP_H
