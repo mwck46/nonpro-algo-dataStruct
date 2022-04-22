@@ -5,7 +5,9 @@ class minheap : public heap
 {
 public:
   int pop_min();
+  void push(int newElem);
 private:
-  void heapify(int idx);
+  void insertHeapify(int idx);
+  void removeHeapify(int idx);
 };
 #endif // !MINHEAP_H

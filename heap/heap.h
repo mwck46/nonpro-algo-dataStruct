@@ -1,13 +1,14 @@
 #ifndef HEAP_H
 
 #include <algorithm>
+#include <stdexcept>
 
 class heap
 {
 public:
 	heap();
 	~heap();
-	void push(int newElem);
+	
 
 protected:
 	int _maxElemNum;
@@ -22,9 +23,6 @@ protected:
 
   void swapElem(int idx1, int idx2);
   int compareElem(int idx1, int idx2);
-
-  // Need concrete implementation for min heap and max heap
-  virtual void heapify(int idx) = 0;
 };
 
 #endif // !HEAP_H

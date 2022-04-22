@@ -10,15 +10,6 @@ heap::~heap()
 	delete[] _elem;
 }
 
-void heap::push(int newElem)
-{
-  if (++_endIdx >= _maxElemNum)
-    doubleStoreSize();
-
-  *(_elem + _endIdx) = newElem;
-  heapify(_endIdx);
-}
-
 void heap::doubleStoreSize()
 {
 	int newSize = _maxElemNum * 2;
