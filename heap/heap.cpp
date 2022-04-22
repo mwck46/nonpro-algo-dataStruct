@@ -26,12 +26,14 @@ int heap::getParentIdx(int idx)
 
 int heap::getRightChildIdx(int idx)
 {
-  return idx * 2 + 2;
+  int r = idx * 2 + 2;
+  return (r > _endIdx) ? -1 : r;
 }
 
 int heap::getLeftChildIdx(int idx)
 {
-  return idx * 2 + 1;
+  int l = idx * 2 + 1;
+  return (l > _endIdx) ? -1 : l;
 }
 
 void heap::swapElem(int idx1, int idx2)

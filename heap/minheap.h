@@ -7,7 +7,7 @@ public:
   int pop_min();
   void push(int newElem);
 private:
-  void insertHeapify(int idx);
-  void removeHeapify(int idx);
+  void heapify4push(int idx);
+  void heapify4pop(int idx);
 };
 #endif // !MINHEAP_H

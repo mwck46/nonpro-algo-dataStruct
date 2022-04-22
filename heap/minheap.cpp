@@ -5,17 +5,34 @@ int minheap::pop_min()
   if (_endIdx < 0)
     throw std::exception("Index out of range");
 
-  if (_endIdx == 1)
-    return _elem[_endIdx--];
-
-  int smallest = _elem[0];
+  int root = _elem[0];
   _elem[0] = _elem[_endIdx--];
-  heapify4pop(0);
-  return smallest;
+  if (_endIdx > 0) {
+    heapify4pop(0);
+  }
+  return root;
 }
 
 void minheap::heapify4pop(int idx)
 {
+  int rId = getRightChildIdx(idx);
+  int lId = getLeftChildIdx(idx);
+
+  int r = INT_MAX;
+  if (rId >= 0) 
+    r = _elem[rId];
+  int l = INT_MAX;
+  if (lId >= 0) 
+    l = _elem[lId];
+  
+  int p = _elem[idx];
+  if (r >= l && p > l) {
+    swapElem(idx, lId);
+    heapify4pop(lId);
+  } else if (l >= r && p > r) {
+    swapElem(idx, rId);
+    heapify4pop(rId);
+  }
 }
 
 void minheap::push(int newElem)
